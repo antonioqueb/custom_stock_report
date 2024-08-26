@@ -3,21 +3,26 @@
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="picking">
                 <t t-foreach="picking.move_ids_without_package" t-as="move_line">
-                    <div style="page-break-after: always;">
-                        <h1>Reporte de Producto</h1>
-                        <p>Transferencia: <t t-esc="picking.name"/></p>
-                        <p>Producto: <t t-esc="move_line.product_id.display_name"/></p>
-                        <p>Cantidad demandada: <t t-esc="move_line.product_uom_qty"/></p>
-                        <p>Ubicación origen: <t t-esc="move_line.location_id.display_name"/></p>
-                        <p>Ubicación destino: <t t-esc="move_line.location_dest_id.display_name"/></p>
+                    <t t-foreach="move_line.move_line_ids" t-as="line">
+                        <div style="page-break-after: always;">
+                            <h1>Reporte de Producto</h1>
+                            <p>Transferencia: <t t-esc="picking.name"/></p>
+                            <p>Producto: <t t-esc="move_line.product_id.display_name"/></p>
+                            <p>Cantidad demandada: <t t-esc="line.qty_done"/></p>
+                            <p>Ubicación origen: <t t-esc="line.location_id.display_name"/></p>
+                            <p>Ubicación destino: <t t-esc="line.location_dest_id.display_name"/></p>
 
-                        <!-- Campos extendidos -->
-                        <p>Gramaje: <t t-esc="move_line.gramaje"/></p>
-                        <p>Ancho: <t t-esc="move_line.ancho"/></p>
-                        <p>Tipo: <t t-esc="move_line.tipo"/></p>
-                        <p>Kilos: <t t-esc="move_line.kilos"/></p>
-                        <p>Planta: <t t-esc="move_line.planta"/></p>
-                    </div>
+                            <!-- Campos extendidos -->
+                            <p>Gramaje: <t t-esc="move_line.gramaje"/></p>
+                            <p>Ancho: <t t-esc="move_line.ancho"/></p>
+                            <p>Tipo: <t t-esc="move_line.tipo"/></p>
+                            <p>Kilos: <t t-esc="move_line.kilos"/></p>
+                            <p>Planta: <t t-esc="move_line.planta"/></p>
+
+                            <!-- Información de serie/folio -->
+                            <p>Folio/Número de Serie: <t t-esc="line.lot_id.name" t-if="line.lot_id"/></p>
+                        </div>
+                    </t>
                 </t>
             </t>
         </t>
