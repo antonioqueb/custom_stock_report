@@ -10,6 +10,13 @@
                         <p>Cantidad demandada: <t t-esc="move_line.product_uom_qty"/></p>
                         <p>Ubicación origen: <t t-esc="move_line.location_id.display_name"/></p>
                         <p>Ubicación destino: <t t-esc="move_line.location_dest_id.display_name"/></p>
+
+                        <!-- Campos extendidos -->
+                        <p>Gramaje: <t t-esc="move_line.gramaje"/></p>
+                        <p>Ancho: <t t-esc="move_line.ancho"/></p>
+                        <p>Tipo: <t t-esc="move_line.tipo"/></p>
+                        <p>Kilos: <t t-esc="move_line.kilos"/></p>
+                        <p>Planta: <t t-esc="move_line.planta"/></p>
                     </div>
                 </t>
             </t>
