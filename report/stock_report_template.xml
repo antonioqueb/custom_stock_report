@@ -13,11 +13,11 @@
                             </h1>
                    
                             <!-- Campos extendidos -->
-                            <h2 style="font-size: 45px;">Gramaje: <t t-esc="move_line.gramaje"/></h2>
-                            <h2 style="font-size: 45px;">Ancho: <t t-esc="move_line.ancho"/></h2>
-                            <h2 style="font-size: 45px;">Tipo: <t t-esc="move_line.tipo"/></h2>
-                            <h2 style="font-size: 45px;">Kilos: <t t-esc="move_line.kilos"/></h2>
-                            <h2 style="font-size: 45px;">Planta: <t t-esc="move_line.planta"/></h2>
+                            <h2 style="font-size: 55px;">Gramaje: <t t-esc="move_line.gramaje"/></h2>
+                            <h2 style="font-size: 55px;">Ancho: <t t-esc="move_line.ancho"/></h2>
+                            <h2 style="font-size: 55px;">Tipo: <t t-esc="move_line.tipo"/></h2>
+                            <h2 style="font-size: 55px;">Kilos: <t t-esc="move_line.kilos"/></h2>
+                            <h2 style="font-size: 55px;">Planta: <t t-esc="move_line.planta"/></h2>
 
                             <!-- Línea divisoria -->
                             <hr style="border: 2px solid black; margin: 20px 0;" />
