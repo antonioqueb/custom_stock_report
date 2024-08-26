@@ -4,61 +4,51 @@
             <t t-foreach="docs" t-as="picking">
                 <t t-foreach="picking.move_ids_without_package" t-as="move_line">
                     <t t-foreach="move_line.move_line_ids" t-as="line">
-                        <div style="page-break-inside: avoid;">
+                        <div style="page-break-after: always;">
+                            <!-- Título principal -->
+                            <h1 style="font-size: 65px; border: 4px solid black; border-radius: 15px; padding: 25px; margin: 0; text-align: center;">
+                                # <t t-esc="line.lot_id.name" t-if="line.lot_id"/>
+                            </h1>
 
-                            <!-- Título principal en el centro -->
-                            <div style="text-align: center;">
-                                <h1 style="font-size: 50px; border: 2px solid black; border-radius: 10px; padding: 15px; margin: 0;">
-                                    # <t t-esc="line.lot_id.name" t-if="line.lot_id"/>
-                                </h1>
+                            <!-- Contenido con títulos y valores alineados horizontalmente -->
+                            <div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                                    <span style="font-size: 30px; color: grey;">GRAMAJE:</span>
+                                    <span style="font-size: 55px; font-weight: bold;"><t t-esc="move_line.gramaje"/></span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                                    <span style="font-size: 30px; color: grey;">ANCHO:</span>
+                                    <span style="font-size: 55px; font-weight: bold;"><t t-esc="move_line.ancho"/></span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                                    <span style="font-size: 30px; color: grey;">TIPO:</span>
+                                    <span style="font-size: 55px; font-weight: bold;"><t t-esc="move_line.tipo"/></span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                                    <span style="font-size: 30px; color: grey;">KILOS:</span>
+                                    <span style="font-size: 55px; font-weight: bold;"><t t-esc="move_line.kilos"/></span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                                    <span style="font-size: 30px; color: grey;">PLANTA INGRESO:</span>
+                                    <span style="font-size: 55px; font-weight: bold;"><t t-esc="move_line.planta"/></span>
+                                </div>
                             </div>
 
-                            <!-- Contenido en dos columnas -->
-                            <div style="display: flex; justify-content: space-between; padding: 20px;">
-                                <!-- Columna izquierda -->
-                                <div style="width: 48%;">
-                                    <p style="font-size: 22px; color: grey;">GRAMAJE:</p>
-                                    <p style="font-size: 35px; font-weight: bold;"><t t-esc="move_line.gramaje"/></p>
-                                    
-                                    <p style="font-size: 22px; color: grey;">ANCHO:</p>
-                                    <p style="font-size: 35px; font-weight: bold;"><t t-esc="move_line.ancho"/></p>
+                            <!-- Línea divisoria -->
+                            <hr style="border: 2px solid black; margin: 20px 0;" />
 
-                                    <p style="font-size: 22px; color: grey;">TIPO:</p>
-                                    <p style="font-size: 35px; font-weight: bold;"><t t-esc="move_line.tipo"/></p>
-
-                                    <p style="font-size: 22px; color: grey;">KILOS:</p>
-                                    <p style="font-size: 35px; font-weight: bold;"><t t-esc="move_line.kilos"/></p>
-
-                                    <p style="font-size: 22px; color: grey;">PLANTA INGRESO:</p>
-                                    <p style="font-size: 35px; font-weight: bold;"><t t-esc="move_line.planta"/></p>
-                                </div>
-
-                                <!-- Columna derecha -->
-                                <div style="width: 48%;">
-                                    <p style="font-size: 22px; color: grey;">TRANSFERENCIA:</p>
-                                    <p style="font-size: 35px; font-weight: bold;"><t t-esc="picking.name"/></p>
-                                    
-                                    <p style="font-size: 22px; color: grey;">PRODUCTO:</p>
-                                    <p style="font-size: 35px; font-weight: bold;"><t t-esc="line.product_id.display_name"/></p>
-
-                                    <p style="font-size: 22px; color: grey;">CANTIDAD:</p>
-                                    <p style="font-size: 35px; font-weight: bold;"><t t-esc="line.quantity"/></p>
-
-                                    <p style="font-size: 22px; color: grey;">FECHA:</p>
-                                    <p style="font-size: 35px; font-weight: bold;"><t t-esc="picking.scheduled_date.strftime('%d/%m/%Y')"/></p>
-
-                                    <p style="font-size: 22px; color: grey;">PROVEEDOR:</p>
-                                    <p style="font-size: 35px; font-weight: bold;">
-                                        <t t-esc="picking.partner_id.name" t-if="picking.partner_id"/>
-                                        <t t-else="">N/A</t>
-                                    </p>
-
-                                    <p style="font-size: 22px; color: grey;">DOCUMENTO DE ORIGEN:</p>
-                                    <p style="font-size: 35px; font-weight: bold;">
-                                        <t t-esc="picking.origin" t-if="picking.origin"/>
-                                        <t t-else="">N/A</t>
-                                    </p>
-                                </div>
+                            <!-- Nuevos campos adicionales alineados -->
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                                <span style="font-size: 25px; color: grey;">TRANSFERENCIA:</span>
+                                <span style="font-size: 35px; font-weight: bold;"><t t-esc="picking.name"/></span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                                <span style="font-size: 25px; color: grey;">PRODUCTO:</span>
+                                <span style="font-size: 35px; font-weight: bold;"><t t-esc="line.product_id.display_name"/></span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                                <span style="font-size: 25px; color: grey;">CANTIDAD:</span>
+                                <span style="font-size: 35px; font-weight: bold;"><t t-esc="line.quantity"/></span>
                             </div>
                         </div>
                     </t>
