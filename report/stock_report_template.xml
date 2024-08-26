@@ -5,60 +5,23 @@
                 <t t-foreach="picking.move_ids_without_package" t-as="move_line">
                     <t t-foreach="move_line.move_line_ids" t-as="line">
                         <div style="page-break-after: always;">
-                            <!-- Título principal con icono -->
-                            <h1 style="font-size: 80px; 
-                                       border: 2px solid black; 
-                                       border-radius: 25px; 
-                                       margin: 8rem auto; 
-                                       text-align: center; 
-                                       padding: 20px; 
-                                       display: inline-block; 
-                                       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); 
-                                       font-family: 'Arial', sans-serif;">
-                                &#x1F4E6; <!-- Icono de caja -->
-                                # <t t-esc="line.lot_id.name" t-if="line.lot_id"/>
-                            </h1>
-                            
-                            <!-- Campos extendidos con iconos -->
-                            <div style="margin: 4rem auto; padding: 2rem; background-color: #f7f7f7; border-radius: 15px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-                                <h2 style="font-size: 60px; font-family: 'Arial', sans-serif;">
-                                    &#x2696; <!-- Icono de balanza -->
-                                    Gramaje: <t t-esc="move_line.gramaje"/>
-                                </h2>
-                                <h2 style="font-size: 60px; font-family: 'Arial', sans-serif;">
-                                    &#x25FB; <!-- Icono de cuadrado -->
-                                    Ancho: <t t-esc="move_line.ancho"/>
-                                </h2>
-                                <h2 style="font-size: 60px; font-family: 'Arial', sans-serif;">
-                                    &#x1F4C4; <!-- Icono de documento -->
-                                    Tipo: <t t-esc="move_line.tipo"/>
-                                </h2>
-                                <h2 style="font-size: 60px; font-family: 'Arial', sans-serif;">
-                                    &#x1F4B0; <!-- Icono de peso -->
-                                    Kilos: <t t-esc="move_line.kilos"/>
-                                </h2>
-                                <h2 style="font-size: 60px; font-family: 'Arial', sans-serif;">
-                                    &#x1F3E2; <!-- Icono de edificio -->
-                                    Planta: <t t-esc="move_line.planta"/>
-                                </h2>
-                            </div>
+                            <!-- Título principal -->
+                          <h1 style="font-size: 80px; border: 2px solid black; border-radius: 15px; margin: 10rem auto; text-align: center; padding: 20px; display: inline-block;">
+                            # <t t-esc="line.lot_id.name" t-if="line.lot_id"/>
+                          </h1>
+                            <!-- Campos extendidos -->
+                            <h2 style="font-size: 70px;">Gramaje: <t t-esc="move_line.gramaje"/></h2>
+                            <h2 style="font-size: 70px;">Ancho: <t t-esc="move_line.ancho"/></h2>
+                            <h2 style="font-size: 70px;">Tipo: <t t-esc="move_line.tipo"/></h2>
+                            <h2 style="font-size: 70px;">Kilos: <t t-esc="move_line.kilos"/></h2>
+                            <h2 style="font-size: 70px;">Planta: <t t-esc="move_line.planta"/></h2>
 
                             <!-- Línea divisoria -->
-                            <hr style="border: 2px solid black; margin: 40px 0;" />
+                            <hr style="border: 2px solid black; margin: 20px 0;" />
 
-                            <!-- Información adicional -->
-                            <p style="font-size: 40px; font-family: 'Arial', sans-serif;">
-                                &#x1F4E4; <!-- Icono de transferencia -->
-                                Transferencia: <t t-esc="picking.name"/>
-                            </p>
-                            <p style="font-size: 40px; font-family: 'Arial', sans-serif;">
-                                &#x1F6D2; <!-- Icono de carrito -->
-                                Producto: <t t-esc="line.product_id.display_name"/>
-                            </p>
-                            <p style="font-size: 40px; font-family: 'Arial', sans-serif;">
-                                &#x2714; <!-- Icono de check -->
-                                Cantidad: <t t-esc="line.quantity"/>
-                            </p>
+                            <p style="font-size: 30px;">Transferencia: <t t-esc="picking.name"/></p>
+                            <p style="font-size: 30px;">Producto: <t t-esc="line.product_id.display_name"/></p>
+                            <p style="font-size: 30px;">Cantidad: <t t-esc="line.quantity"/></p>
                         </div>
                     </t>
                 </t>
