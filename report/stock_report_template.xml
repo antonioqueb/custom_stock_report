@@ -15,20 +15,20 @@
 
                             <!-- Contenido en una sola columna con separación vertical moderada -->
                             <div style="padding: 30px;">
-                                <p style="font-size: 40px; color: #505050; margin-bottom: 5px;">GRAMAJE: <span style="font-weight: bold;"><t t-esc="move_line.gramaje"/></span></p>
-                                <p style="font-size: 40px; color: #505050; margin-bottom: 5px;">ANCHO: <span style="font-weight: bold;"><t t-esc="move_line.ancho"/></span></p>
-                                <p style="font-size: 40px; color: #505050; margin-bottom: 5px;">TIPO: <span style="font-weight: bold;"><t t-esc="move_line.tipo"/></span></p>
-                                <p style="font-size: 40px; color: #505050; margin-bottom: 5px;">KILOS: <span style="font-weight: bold;"><t t-esc="move_line.kilos"/></span></p>
-                                <p style="font-size: 40px; color: #505050; margin-bottom: 5px;">PLANTA INGRESO: <span style="font-weight: bold;"><t t-esc="move_line.planta"/></span></p>
+                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">GRAMAJE: <span style="font-weight: bold;"><t t-esc="move_line.gramaje"/></span></p>
+                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">ANCHO: <span style="font-weight: bold;"><t t-esc="move_line.ancho"/></span></p>
+                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">TIPO: <span style="font-weight: bold;"><t t-esc="move_line.tipo"/></span></p>
+                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">KILOS: <span style="font-weight: bold;"><t t-esc="move_line.kilos"/></span></p>
+                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">PLANTA INGRESO: <span style="font-weight: bold;"><t t-esc="move_line.planta"/></span></p>
 
                                 <hr style="border: 1px solid black; margin: 20px 0;" />
 
-                                <p style="font-size: 19px; color: #505050; margin-bottom: 10px;">TRANSFERENCIA: <span style="font-weight: bold;"><t t-esc="picking.name"/></span></p>
-                                <p style="font-size: 19px; color: #505050; margin-bottom: 10px;">PRODUCTO: <span style="font-weight: bold;"><t t-esc="line.product_id.display_name"/></span></p>
-                                <p style="font-size: 19px; color: #505050; margin-bottom: 10px;">CANTIDAD: <span style="font-weight: bold;"><t t-esc="line.quantity"/></span></p>
-                                <p style="font-size: 19px; color: #505050; margin-bottom: 10px;">FECHA: <span style="font-weight: bold;"><t t-esc="picking.scheduled_date.strftime('%d/%m/%Y')"/></span></p>
-                                <p style="font-size: 19px; color: #505050; margin-bottom: 10px;">PROVEEDOR: <span style="font-weight: bold;"><t t-esc="picking.partner_id.name" t-if="picking.partner_id"/> <t t-else="">N/A</t></span></p>
-                                <p style="font-size: 19px; color: #505050; margin-bottom: 10px;">DOCUMENTO DE ORIGEN: <span style="font-weight: bold;"><t t-esc="picking.origin" t-if="picking.origin"/> <t t-else="">N/A</t></span></p>
+                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">TRANSFERENCIA: <span style="font-weight: bold;"><t t-esc="picking.name"/></span></p>
+                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">PRODUCTO: <span style="font-weight: bold;"><t t-esc="line.product_id.display_name"/></span></p>
+                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">CANTIDAD: <span style="font-weight: bold;"><t t-esc="line.quantity"/></span></p>
+                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">FECHA: <span style="font-weight: bold;"><t t-esc="picking.scheduled_date.strftime('%d/%m/%Y')"/></span></p>
+                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">PROVEEDOR: <span style="font-weight: bold;"><t t-esc="picking.partner_id.name" t-if="picking.partner_id"/> <t t-else="">N/A</t></span></p>
+                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">DOCUMENTO DE ORIGEN: <span style="font-weight: bold;"><t t-esc="picking.origin" t-if="picking.origin"/> <t t-else="">N/A</t></span></p>
                             </div>
                         </div>
                     </t>
