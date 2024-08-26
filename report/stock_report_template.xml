@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="report_stock_picking_test">
         <t t-call="web.html_container">
@@ -7,21 +6,21 @@
                     <t t-foreach="move_line.move_line_ids" t-as="line">
                         <div style="page-break-after: always;">
                             <!-- Título principal -->
-                            <h1 style="font-size: 80px; text-align: center;">Reporte de Producto</h1>
+                               <h1 style="font-size: 50px;">Etiqueta de Producto: <t t-esc="line.lot_id.name" t-if="line.lot_id"/></h1>
 
-                            <!-- Detalles del reporte con letras grandes -->
-                            <h2 style="font-size: 60px;">Transferencia: <t t-esc="picking.name"/></h2>
-                            <h2 style="font-size: 60px;">Producto: <t t-esc="line.product_id.display_name"/></h2>
-                            <h2 style="font-size: 60px;">Cantidad: <t t-esc="line.quantity"/></h2>
                             <!-- Campos extendidos -->
-                            <h2 style="font-size: 60px;">Gramaje: <t t-esc="move_line.gramaje"/></h2>
-                            <h2 style="font-size: 60px;">Ancho: <t t-esc="move_line.ancho"/></h2>
-                            <h2 style="font-size: 60px;">Tipo: <t t-esc="move_line.tipo"/></h2>
-                            <h2 style="font-size: 60px;">Kilos: <t t-esc="move_line.kilos"/></h2>
-                            <h2 style="font-size: 60px;">Planta: <t t-esc="move_line.planta"/></h2>
+                            <h2 style="font-size: 50px;">Gramaje: <t t-esc="move_line.gramaje"/></h2>
+                            <h2 style="font-size: 50px;">Ancho: <t t-esc="move_line.ancho"/></h2>
+                            <h2 style="font-size: 50px;">Tipo: <t t-esc="move_line.tipo"/></h2>
+                            <h2 style="font-size: 50px;">Kilos: <t t-esc="move_line.kilos"/></h2>
+                            <h2 style="font-size: 50px;">Planta: <t t-esc="move_line.planta"/></h2>
 
-                            <!-- Información de serie/folio -->
-                            <h2 style="font-size: 60px;">Folio/Número de Serie: <t t-esc="line.lot_id.name" t-if="line.lot_id"/></h1>
+                            <!-- Línea divisoria -->
+                            <hr style="border: 2px solid black; margin: 20px 0;" />
+
+                            <p style="font-size: 30px;">Transferencia: <t t-esc="picking.name"/></p>
+                            <p style="font-size: 30px;">Producto: <t t-esc="line.product_id.display_name"/></p>
+                            <p style="font-size: 30px;">Cantidad: <t t-esc="line.quantity"/></p>
                         </div>
                     </t>
                 </t>
