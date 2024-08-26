@@ -7,8 +7,8 @@
                         <div style="page-break-after: always;">
                             <h1>Reporte de Producto</h1>
                             <p>Transferencia: <t t-esc="picking.name"/></p>
-                            <p>Producto: <t t-esc="move_line.product_id.display_name"/></p>
-                            <p>Cantidad real: <t t-esc="line.product_qty"/></p>
+                            <p>Producto: <t t-esc="line.product_id.display_name"/></p>
+                            <p>Cantidad: <t t-esc="line.quantity"/></p>
                             <p>Ubicación origen: <t t-esc="line.location_id.display_name"/></p>
                             <p>Ubicación destino: <t t-esc="line.location_dest_id.display_name"/></p>
 
