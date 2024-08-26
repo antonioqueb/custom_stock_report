@@ -15,11 +15,11 @@
 
                             <!-- Contenido en una sola columna con separación vertical moderada -->
                             <div style="padding: 30px;">
-                                <p style="font-size: 45px; color: #505050; margin-bottom: 5px;">GRAMAJE: <span style="font-weight: bold;"><t t-esc="move_line.gramaje"/></span></p>
-                                <p style="font-size: 45px; color: #505050; margin-bottom: 5px;">ANCHO: <span style="font-weight: bold;"><t t-esc="move_line.ancho"/></span></p>
-                                <p style="font-size: 45px; color: #505050; margin-bottom: 5px;">TIPO: <span style="font-weight: bold;"><t t-esc="move_line.tipo"/></span></p>
-                                <p style="font-size: 45px; color: #505050; margin-bottom: 5px;">KILOS: <span style="font-weight: bold;"><t t-esc="move_line.kilos"/></span></p>
-                                <p style="font-size: 45px; color: #505050; margin-bottom: 5px;">PLANTA INGRESO: <span style="font-weight: bold;"><t t-esc="move_line.planta"/></span></p>
+                                <p style="font-size: 40px; color: #505050; margin-bottom: 5px;">GRAMAJE: <span style="font-weight: bold;"><t t-esc="move_line.gramaje"/></span></p>
+                                <p style="font-size: 40px; color: #505050; margin-bottom: 5px;">ANCHO: <span style="font-weight: bold;"><t t-esc="move_line.ancho"/></span></p>
+                                <p style="font-size: 40px; color: #505050; margin-bottom: 5px;">TIPO: <span style="font-weight: bold;"><t t-esc="move_line.tipo"/></span></p>
+                                <p style="font-size: 40px; color: #505050; margin-bottom: 5px;">KILOS: <span style="font-weight: bold;"><t t-esc="move_line.kilos"/></span></p>
+                                <p style="font-size: 40px; color: #505050; margin-bottom: 5px;">PLANTA INGRESO: <span style="font-weight: bold;"><t t-esc="move_line.planta"/></span></p>
 
                                 <hr style="border: 1px solid black; margin: 20px 0;" />
 
