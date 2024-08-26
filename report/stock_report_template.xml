@@ -6,15 +6,19 @@
                     <t t-foreach="move_line.move_line_ids" t-as="line">
                         <div style="page-break-after: always;">
                             <!-- Título principal -->
-                          <h1 style="font-size: 80px; border: 2px solid black; border-radius: 15px; margin: 10rem auto; text-align: center; padding: 20px; display: inline-block;">
-                            # <t t-esc="line.lot_id.name" t-if="line.lot_id"/>
-                          </h1>
+                       <div style="page-break-after: always; display: flex; justify-content: center; align-items: center; height: 100vh;">
+                            <!-- Título principal -->
+                            <h1 style="font-size: 70px; border: 2px solid black; border-radius: 15px; padding: 20px; margin: 0; text-align: center;">
+                                # <t t-esc="line.lot_id.name" t-if="line.lot_id"/>
+                            </h1>
+                        </div>
+
                             <!-- Campos extendidos -->
-                            <h2 style="font-size: 70px;">Gramaje: <t t-esc="move_line.gramaje"/></h2>
-                            <h2 style="font-size: 70px;">Ancho: <t t-esc="move_line.ancho"/></h2>
-                            <h2 style="font-size: 70px;">Tipo: <t t-esc="move_line.tipo"/></h2>
-                            <h2 style="font-size: 70px;">Kilos: <t t-esc="move_line.kilos"/></h2>
-                            <h2 style="font-size: 70px;">Planta: <t t-esc="move_line.planta"/></h2>
+                            <h2 style="font-size: 55px;">Gramaje: <t t-esc="move_line.gramaje"/></h2>
+                            <h2 style="font-size: 55px;">Ancho: <t t-esc="move_line.ancho"/></h2>
+                            <h2 style="font-size: 55px;">Tipo: <t t-esc="move_line.tipo"/></h2>
+                            <h2 style="font-size: 55px;">Kilos: <t t-esc="move_line.kilos"/></h2>
+                            <h2 style="font-size: 55px;">Planta: <t t-esc="move_line.planta"/></h2>
 
                             <!-- Línea divisoria -->
                             <hr style="border: 2px solid black; margin: 20px 0;" />
