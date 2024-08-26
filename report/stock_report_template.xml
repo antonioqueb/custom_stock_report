@@ -5,22 +5,22 @@
                 <t t-foreach="picking.move_ids_without_package" t-as="move_line">
                     <t t-foreach="move_line.move_line_ids" t-as="line">
                         <div style="page-break-after: always;">
-                            <h1>Reporte de Producto</h1>
-                            <p>Transferencia: <t t-esc="picking.name"/></p>
-                            <p>Producto: <t t-esc="line.product_id.display_name"/></p>
-                            <p>Cantidad: <t t-esc="line.quantity"/></p>
-                            <p>Ubicación origen: <t t-esc="line.location_id.display_name"/></p>
-                            <p>Ubicación destino: <t t-esc="line.location_dest_id.display_name"/></p>
+                            <!-- Título principal -->
+                            <h1 style="font-size: 80px; text-align: center;">Reporte de Producto</h1>
 
+                            <!-- Detalles del reporte con letras grandes -->
+                            <h1 style="font-size: 60px;">Transferencia: <t t-esc="picking.name"/></h1>
+                            <h1 style="font-size: 60px;">Producto: <t t-esc="line.product_id.display_name"/></h1>
+                            <h1 style="font-size: 60px;">Cantidad: <t t-esc="line.quantity"/></h1>
                             <!-- Campos extendidos -->
-                            <p>Gramaje: <t t-esc="move_line.gramaje"/></p>
-                            <p>Ancho: <t t-esc="move_line.ancho"/></p>
-                            <p>Tipo: <t t-esc="move_line.tipo"/></p>
-                            <p>Kilos: <t t-esc="move_line.kilos"/></p>
-                            <p>Planta: <t t-esc="move_line.planta"/></p>
+                            <h1 style="font-size: 60px;">Gramaje: <t t-esc="move_line.gramaje"/></h1>
+                            <h1 style="font-size: 60px;">Ancho: <t t-esc="move_line.ancho"/></h1>
+                            <h1 style="font-size: 60px;">Tipo: <t t-esc="move_line.tipo"/></h1>
+                            <h1 style="font-size: 60px;">Kilos: <t t-esc="move_line.kilos"/></h1>
+                            <h1 style="font-size: 60px;">Planta: <t t-esc="move_line.planta"/></h1>
 
                             <!-- Información de serie/folio -->
-                            <p>Folio/Número de Serie: <t t-esc="line.lot_id.name" t-if="line.lot_id"/></p>
+                            <h1 style="font-size: 60px;">Folio/Número de Serie: <t t-esc="line.lot_id.name" t-if="line.lot_id"/></h1>
                         </div>
                     </t>
                 </t>
