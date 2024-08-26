@@ -34,7 +34,7 @@
 
     <!-- Acción de reporte -->
     <record id="action_report_stock_picking_test" model="ir.actions.report">
-        <field name="name">Stock Picking Test Report</field>
+        <field name="name">Etiqueta Personalizada</field>
         <field name="model">stock.picking</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">custom_stock_report.report_stock_picking_test</field>
