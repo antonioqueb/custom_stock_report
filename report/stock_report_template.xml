@@ -8,7 +8,7 @@
                             <h1>Reporte de Producto</h1>
                             <p>Transferencia: <t t-esc="picking.name"/></p>
                             <p>Producto: <t t-esc="move_line.product_id.display_name"/></p>
-                            <p>Cantidad demandada: <t t-esc="line.qty_done"/></p>
+                            <p>Cantidad real: <t t-esc="line.product_qty"/></p>
                             <p>Ubicación origen: <t t-esc="line.location_id.display_name"/></p>
                             <p>Ubicación destino: <t t-esc="line.location_dest_id.display_name"/></p>
 
