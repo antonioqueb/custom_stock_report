@@ -13,74 +13,22 @@
                                 </h1>
                             </div>
 
-                            <!-- Contenido en dos columnas -->
-                            <div style="display: flex; justify-content: space-between; padding: 20px;">
-                                <!-- Columna izquierda -->
-                                <div style="width: 48%;">
-                                    <div style="display: flex; justify-content: space-between;">
-                                        <span style="font-size: 35px; color: #505050;">GRAMAJE:</span>
-                                        <span style="font-size: 35px; font-weight: bold;"><t t-esc="move_line.gramaje"/></span>
-                                    </div>
+                            <!-- Contenido en una sola columna con separación vertical moderada -->
+                            <div style="padding: 20px;">
+                                <p style="font-size: 20px; color: #505050; margin-bottom: 10px;">GRAMAJE: <span style="font-weight: bold;"><t t-esc="move_line.gramaje"/></span></p>
+                                <p style="font-size: 20px; color: #505050; margin-bottom: 10px;">ANCHO: <span style="font-weight: bold;"><t t-esc="move_line.ancho"/></span></p>
+                                <p style="font-size: 20px; color: #505050; margin-bottom: 10px;">TIPO: <span style="font-weight: bold;"><t t-esc="move_line.tipo"/></span></p>
+                                <p style="font-size: 20px; color: #505050; margin-bottom: 10px;">KILOS: <span style="font-weight: bold;"><t t-esc="move_line.kilos"/></span></p>
+                                <p style="font-size: 20px; color: #505050; margin-bottom: 10px;">PLANTA INGRESO: <span style="font-weight: bold;"><t t-esc="move_line.planta"/></span></p>
 
-                                    <div style="display: flex; justify-content: space-between;">
-                                        <span style="font-size: 35px; color: #505050;">ANCHO:</span>
-                                        <span style="font-size: 35px; font-weight: bold;"><t t-esc="move_line.ancho"/></span>
-                                    </div>
+                                <hr style="border: 1px solid black; margin: 20px 0;" />
 
-                                    <div style="display: flex; justify-content: space-between;">
-                                        <span style="font-size: 35px; color: #505050;">TIPO:</span>
-                                        <span style="font-size: 35px; font-weight: bold;"><t t-esc="move_line.tipo"/></span>
-                                    </div>
-
-                                    <div style="display: flex; justify-content: space-between;">
-                                        <span style="font-size: 35px; color: #505050;">KILOS:</span>
-                                        <span style="font-size: 35px; font-weight: bold;"><t t-esc="move_line.kilos"/></span>
-                                    </div>
-
-                                    <div style="display: flex; justify-content: space-between;">
-                                        <span style="font-size: 35px; color: #505050;">PLANTA INGRESO:</span>
-                                        <span style="font-size: 35px; font-weight: bold;"><t t-esc="move_line.planta"/></span>
-                                    </div>
-                                </div>
-
-                                <!-- Columna derecha -->
-                                <div style="width: 48%;">
-                                    <div style="display: flex; justify-content: space-between;">
-                                        <span style="font-size: 35px; color: #505050;">TRANSFERENCIA:</span>
-                                        <span style="font-size: 35px; font-weight: bold;"><t t-esc="picking.name"/></span>
-                                    </div>
-
-                                    <div style="display: flex; justify-content: space-between;">
-                                        <span style="font-size: 35px; color: #505050;">PRODUCTO:</span>
-                                        <span style="font-size: 35px; font-weight: bold;"><t t-esc="line.product_id.display_name"/></span>
-                                    </div>
-
-                                    <div style="display: flex; justify-content: space-between;">
-                                        <span style="font-size: 35px; color: #505050;">CANTIDAD:</span>
-                                        <span style="font-size: 35px; font-weight: bold;"><t t-esc="line.quantity"/></span>
-                                    </div>
-
-                                    <div style="display: flex; justify-content: space-between;">
-                                        <span style="font-size: 35px; color: #505050;">FECHA:</span>
-                                        <span style="font-size: 35px; font-weight: bold;"><t t-esc="picking.scheduled_date.strftime('%d/%m/%Y')"/></span>
-                                    </div>
-
-                                    <div style="display: flex; justify-content: space-between;">
-                                        <span style="font-size: 35px; color: #505050;">PROVEEDOR:</span>
-                                        <span style="font-size: 35px; font-weight: bold;">
-                                            <t t-esc="picking.partner_id.name" t-if="picking.partner_id"/>
-                                            <t t-else="">N/A</t>
-                                        </span>
-                                    </div>
-
-                                    <div style="display: flex; justify-content: space-between;">
-                                        <span style="font-size: 35px; color: #505050;">DOCUMENTO DE ORIGEN:</span>
-                                        <span style="font-size: 35px; font-weight: bold;">
-                                            <t t-esc="picking.origin" t-if="picking.origin"/>
-                                            <t t-else="">N/A</t>
-                                        </span>
-                                    </div>
-                                </div>
+                                <p style="font-size: 14px; color: #505050; margin-bottom: 10px;">TRANSFERENCIA: <span style="font-weight: bold;"><t t-esc="picking.name"/></span></p>
+                                <p style="font-size: 14px; color: #505050; margin-bottom: 10px;">PRODUCTO: <span style="font-weight: bold;"><t t-esc="line.product_id.display_name"/></span></p>
+                                <p style="font-size: 14px; color: #505050; margin-bottom: 10px;">CANTIDAD: <span style="font-weight: bold;"><t t-esc="line.quantity"/></span></p>
+                                <p style="font-size: 14px; color: #505050; margin-bottom: 10px;">FECHA: <span style="font-weight: bold;"><t t-esc="picking.scheduled_date.strftime('%d/%m/%Y')"/></span></p>
+                                <p style="font-size: 14px; color: #505050; margin-bottom: 10px;">PROVEEDOR: <span style="font-weight: bold;"><t t-esc="picking.partner_id.name" t-if="picking.partner_id"/> <t t-else="">N/A</t></span></p>
+                                <p style="font-size: 14px; color: #505050; margin-bottom: 10px;">DOCUMENTO DE ORIGEN: <span style="font-weight: bold;"><t t-esc="picking.origin" t-if="picking.origin"/> <t t-else="">N/A</t></span></p>
                             </div>
                         </div>
                     </t>
