@@ -2,33 +2,35 @@
     <template id="report_stock_picking_test">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="picking">
-                <t t-foreach="picking.move_ids_without_package" t-as="move_line">
-                    <t t-foreach="move_line.move_line_ids" t-as="line">
+                <t t-foreach="picking.move_ids_without_package" t-as="move">
+                    <t t-foreach="move.move_line_ids" t-as="line">
                         <div style="page-break-inside: avoid;">
 
                             <!-- Título principal en el centro -->
                             <div style="text-align: center;">
                                 <h1 style="font-size: 50px; border: 2px solid black; border-radius: 10px; padding: 10px; margin: 0;">
                                     # <t t-esc="line.lot_id.name" t-if="line.lot_id"/>
+                                    <t t-if="not line.lot_id">Sin lote</t>
                                 </h1>
                             </div>
 
-                            <!-- Contenido en una sola columna con separación vertical moderada -->
+                            <!-- Contenido personalizado desde stock.move.line -->
                             <div style="padding: 30px;">
-                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">GRAMAJE: <span style="font-weight: bold;"><t t-esc="move_line.gramaje"/></span></p>
-                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">ANCHO: <span style="font-weight: bold;"><t t-esc="move_line.ancho"/></span></p>
-                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">TIPO: <span style="font-weight: bold;"><t t-esc="move_line.tipo"/></span></p>
-                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">KILOS: <span style="font-weight: bold;"><t t-esc="move_line.kilos"/></span></p>
-                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">PLANTA INGRESO: <span style="font-weight: bold;"><t t-esc="move_line.planta"/></span></p>
+                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">GRAMAJE: <span style="font-weight: bold;"><t t-esc="line.gramaje"/></span></p>
+                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">ANCHO: <span style="font-weight: bold;"><t t-esc="line.ancho"/></span></p>
+                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">TIPO: <span style="font-weight: bold;"><t t-esc="line.tipo"/></span></p>
+                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">KILOS: <span style="font-weight: bold;"><t t-esc="line.kilos"/></span></p>
+                                <p style="font-size: 40px; color: #101010; margin-bottom: 5px;">PLANTA INGRESO: <span style="font-weight: bold;"><t t-esc="line.planta"/></span></p>
 
                                 <hr style="border: 1px solid black; margin: 20px 0;" />
 
-                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">TRANSFERENCIA: <span style="font-weight: bold;"><t t-esc="picking.name"/></span></p>
+                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">TRANSFERENCIA: <span style="font-weight: bold;"><t t-esc="line.picking_id.name"/></span></p>
                                 <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">PRODUCTO: <span style="font-weight: bold;"><t t-esc="line.product_id.display_name"/></span></p>
-                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">CANTIDAD: <span style="font-weight: bold;"><t t-esc="line.quantity"/></span></p>
-                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">FECHA: <span style="font-weight: bold;"><t t-esc="picking.scheduled_date.strftime('%d/%m/%Y')"/></span></p>
-                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">PROVEEDOR: <span style="font-weight: bold;"><t t-esc="picking.partner_id.name" t-if="picking.partner_id"/> <t t-else="">N/A</t></span></p>
-                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">DOCUMENTO DE ORIGEN: <span style="font-weight: bold;"><t t-esc="picking.origin" t-if="picking.origin"/> <t t-else="">N/A</t></span></p>
+                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">CANTIDAD: <span style="font-weight: bold;"><t t-esc="line.qty_done"/></span></p>
+                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">FECHA: <span style="font-weight: bold;"><t t-esc="line.picking_id.scheduled_date.strftime('%d/%m/%Y')"/></span></p>
+                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">PROVEEDOR: <span style="font-weight: bold;"><t t-esc="line.picking_id.partner_id.name" t-if="line.picking_id.partner_id"/><t t-if="not line.picking_id.partner_id">N/A</t></span></p>
+                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">DOCUMENTO DE ORIGEN: <span style="font-weight: bold;"><t t-esc="line.picking_id.origin" t-if="line.picking_id.origin"/><t t-if="not line.picking_id.origin">N/A</t></span></p>
+                                <p style="font-size: 19px; color: #101010; margin-bottom: 10px;">CANTIDAD SOLICITADA: <span style="font-weight: bold;"><t t-esc="move.product_uom_qty"/></span></p>
                             </div>
                         </div>
                     </t>
